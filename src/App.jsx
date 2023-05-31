@@ -5,15 +5,48 @@
  */
 
 import React from "react";
-import Header from "./Components/Header";
+
+import About from "./Components/About.jsx";
+import Footer from "./Components/Footer.jsx";
+import Header from "./Components/Header.jsx";
+import Home from "./Components/Home.jsx";
+import Portfolio from "./Components/Portfolio.jsx";
+
+import "./styles.css";
+
+/**
+ * This object represents your information. The project is set so that you
+ * only need to update these here, and values are passed a properties to the
+ * components that need that information.
+ *
+ * Update the values below with your information.
+ *
+ * If you don't have one of the social sites listed, leave it as an empty string.
+ */
+const siteProps = {
+  name: "Itiel Sánchez",
+  title: "Student Systems Engineer",
+  email: "itiel.sanchezramirez@studentambassadors.com",
+  gitHub: "ItielSanzAXO",
+  instagram: "Itiel_Sanz",
+  linkedIn: "itiel-sanchez-ramirez-01b0a5273/",
+  medium: "",
+  twitter: "Itiel_Sanz",
+  youTube: "",
+};
+
+const primaryColor = "#1FD96A";
+const secondaryColor = "#D2F1E4";
 
 const App = () => {
   return (
-    <>
+    <div id="main">
       <Header />
-      <h3>Built using Codespaces! 🥳</h3>
-      <p>Follow instructions in README to utilize this template for your site or class.</p>
-    </>
+      <Home name={siteProps.name} title={siteProps.title} />
+      <About />
+      <Portfolio />
+      <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />
+    </div>
   );
 };
 
